@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* paste into your global css (e.g., src/index.css) */
+.form-modern {
+  @apply w-full border border-gray-300 rounded-xl px-4 py-3 bg-white/90 focus:outline-none focus:ring-2 focus:ring-indigo-300 transition-all;
+}
+.float-modern {
+  @apply absolute left-4 top-3 text-xs text-gray-500 bg-white px-1 pointer-events-none transform transition-all;
+}
+
+/* floating behavior */
+.peer:focus + .float-modern,
+.peer:not(:placeholder-shown) + .float-modern {
+  @apply -translate-y-6 text-xs text-indigo-600;
+}
